@@ -1,59 +1,46 @@
-## Project Description
-Kickstarter, Go Fund Me, Kiva, Change.org, Patreon… All of these different websites have something in common: they provide a platform for people to create fundraisers that they believe in, but they all have a slightly different approach. You are going to create your own crowdfunding website, and put your own spin on it!
+## `README.md` Template Phase 1: API Plan
 
-## Project Requirements
-Your crowdfunding project must:
+As your Crowdfunding back end grows, you'll have more and more information to put in the `readme.md` file. For now, you have a rough plan for your project, so let's mark it down!
 
-- [ ] Be separated into two distinct projects: an API built using the Django Rest Framework and a website built using React. 
-- [ ] Have a cool name, bonus points if it includes a pun and/or missing vowels. See https://namelix.com/ for inspiration. <sup><sup>(Bonus Points are meaningless)</sup></sup>
-- [ ] Have a clear target audience.
-- [ ] Have user accounts. A user should have at least the following attributes:
-  - [ ] Username
-  - [ ] Email address
-  - [ ] Password
-- [ ] Ability to create a “fundraiser” to be crowdfunded which will include at least the following attributes:
-  - [ ] Title
-  - [ ] Owner (a user)
-  - [ ] Description
-  - [ ] Image
-  - [ ] Target amount to raise
-  - [ ] Whether it is currently open to accepting new supporters or not
-  - [ ] When the fundraiser was created
-- [ ] Ability to “pledge” to a fundraiser. A pledge should include at least the following attributes:
-  - [ ] An amount
-  - [ ] The fundraiser the pledge is for
-  - [ ] The supporter/user (i.e. who created the pledge)
-  - [ ] Whether the pledge is anonymous or not
-  - [ ] A comment to go along with the pledge
-- [ ] Implement suitable update/delete functionality, e.g. should a fundraiser owner be allowed to update its description?
-- [ ] Implement suitable permissions, e.g. who is allowed to delete a pledge?
-- [ ] Return the relevant status codes for both successful and unsuccessful requests to the API.
-- [ ] Handle failed requests gracefully (e.g. you should have a custom 404 page rather than the default error page).
-- [ ] Use Token Authentication, including an endpoint to obtain a token along with the current user's details.
-- [ ] Implement responsive design.
+Below is a template you can use to add your plan to your readme. As usual, {{ double brackets }} indicate places where you should insert your own content. So if your name was Sinead O'Connor, you would swap `Hi, my name is {{ your_name_here }}!` to `Hi, my name is Sinead O'Connor!`
 
-## Additional Notes
-No additional libraries or frameworks, other than what we use in class, are allowed unless approved by the Lead Mentor.
+If you're looking for a good way to create your Schema diagram in VS Code, check out [the draw.io integration extension for VS Code](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)!
 
-Note that while this is a crowdfunding website, actual money transactions are out of scope for this project.
+To make editing tables in Markdown easier, you might enjoy [the Markdown All-In-One extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one). With this installed, you can hit tab inside of any "cell" in a table, and the editor will automatically resize all your columns and create a new row if necessary.
 
-## Submission
-To submit, fill out [this Google form](https://forms.gle/34ymxgPhdT8YXDgF6), including a link to your Github repo. Your lead mentor will respond with any feedback they can offer, and you can approach the mentoring team if you would like help to make improvements based on this feedback!
+```markdown
+# Crowdfunding Back End
+CountOnMe - Support a cause. Make it count.
 
-Please include the following in your readme doc:
-- [ ] A link to the deployed project.
-- [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
-- [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
-- [ ] A screenshot of Insomnia, demonstrating a token being returned.
-- [ ] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
-- [ ] Your refined API specification and Database Schema.
-
-# crowdfunding_back_end
-
-- Lend-A-Hand - Give a little. Change a lot.
-or
-- CountOnMe - Support a cause. Make it count.
-
+## Planning:
+### Concept/Name
 Lend-A-Hand is a full-stack crowdfunding platform designed to connect people with causes, projects, and ideas they care about. It provides a space where users can create fundraisers and where supporters can pledge their help, making it easy to turn small contributions into meaningful impact.
 
 This project was built using **Django REST Framework** for the backend API and **React** for the frontend.
+
+### Intended Audience/User Stories
+{{ Who are your intended audience? How will they use the website? }}
+
+### Front End Pages/Functionality
+- {{ A page on the front end }}
+    - {{ A list of dot-points showing functionality is available on this page }}
+    - {{ etc }}
+    - {{ etc }}
+- {{ A second page available on the front end }}
+    - {{ Another list of dot-points showing functionality }}
+    - {{ etc }}
+
+### API Spec
+{{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page. 
+
+It might look messy here in the PDF, but once it's rendered it looks very neat! 
+
+It can be helpful to keep the markdown preview open in VS Code so that you can see what you're typing more easily. }}
+
+| URL | HTTP Method | Purpose | Request Body | Success Response Code | Authentication/Authorisation |
+| --- | ----------- | ------- | ------------ | --------------------- | ---------------------------- |
+|     |             |         |              |                       |                              |
+
+### DB Schema
+![]( {{ ./relative/path/to/your/schema/image.png }} )
+```
