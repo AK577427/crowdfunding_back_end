@@ -1,4 +1,4 @@
-from django.shortcuts import render
+#from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -18,7 +18,8 @@ class FundraiserList(APIView):
   def post(self, request):
     serializer = FundraiserSerializer(data=request.data)
     if serializer.is_valid():
-      serializer.save()
+      # serializer.save()
+      serializer.save(owner=request.user)
  
       return Response(
         serializer.data, 
@@ -46,7 +47,8 @@ class PledgeList(APIView):
   def post(self, request):
     serializer = PledgeSerializer(data=request.data)
     if serializer.is_valid():
-      serializer.save()
+      # serializer.save()
+      serializer.save(supporter=request.user)
       return Response(
         serializer.data, 
         status=status.HTTP_201_CREATED
