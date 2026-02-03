@@ -47,6 +47,12 @@ class FundraiserDetail(APIView):
     serializer = FundraiserDetailSerializer(fundraiser)
     return Response(serializer.data)
   
+  def delete(self,request,pk):
+    fundraiser = get_object_or_404(Fundraiser, pk=pk)
+    self.check_object_permissions(request, fundraiser)
+    fundraiser.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
+  
   def put(self, request, pk):
     fundraiser = get_object_or_404(Fundraiser, pk=pk)
     self.check_object_permissions(request, fundraiser)
