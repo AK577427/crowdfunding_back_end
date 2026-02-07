@@ -6,8 +6,8 @@ from rest_framework import status, permissions
 from rest_framework.generics import get_object_or_404
 
 from .models import Fundraiser,Pledge
-from .permissions import IsOwnerOrReadOnly
-from .serializers import FundraiserSerializer,PledgeSerializer, FundraiserDetailSerializer
+from .permissions import IsOwnerOrReadOnly, IsOwnerOrFundariserOrReadOnly
+from .serializers import FundraiserSerializer,PledgeSerializer, FundraiserDetailSerializer, PledgeDetailSerializer
 
 class FundraiserList(APIView):
   permission_classes = [
@@ -89,6 +89,25 @@ class PledgeList(APIView):
       serializer.errors, 
       status=status.HTTP_400_BAD_REQUEST
     )
+  
+class PledgeDetail(APIView):
+  permission_classes = [
+    permissions.IsAuthenticatedOrReadOnly,
+    IsOwnerOrFundariserOrReadOnly
+    ]
+
+  def get(self, request, pk):
+    pledges = get_object_or_404(pledges, pk=pk)
+    #serializer = FundraiserSerializer(fundraiser)
+    serializer = PledgeDetailSerializer(pledges)
+    return Response(serializer.data)
+  
+  def delete(self,request,pk):
+    pledge = get_object_or_404(Pledge, pk=pk)
+    #serializer = PledgeDetailSerializer(pledge)
+    self.check_object_permissions(request, pledge)
+    pledge.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 
