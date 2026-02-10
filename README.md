@@ -8,7 +8,7 @@ If you're looking for a good way to create your Schema diagram in VS Code, check
 
 To make editing tables in Markdown easier, you might enjoy [the Markdown All-In-One extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one). With this installed, you can hit tab inside of any "cell" in a table, and the editor will automatically resize all your columns and create a new row if necessary.
 
-```markdown
+
 # Crowdfunding Back End
 CountOnMe - Support a cause. Make it count.
 
@@ -44,24 +44,23 @@ This project was built using **Django REST Framework** for the backend API and *
     - Login - if the user is already registered
 
 ### API Spec
-{{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page. 
-
-It might look messy here in the PDF, but once it's rendered it looks very neat! 
-
-It can be helpful to keep the markdown preview open in VS Code so that you can see what you're typing more easily. }}
 
 | URL             | HTTP Method | Purpose                     | Request Body        | Success Response Code | Authentication/Authorisation |
 | --------------- |------------ | --------------------------- | ------------------- | --------------------- | ---------------------------- |
 | /fundraisers/   |GET          |Get all fundraisers          |N/A                  |200                    |None                          |
 | /fundraisers/1/ |GET          |Get fundraiser with pledges  |Fundraiser object    |200                    |None                          |
 | /fundraisers/   |POST         |Create a new fundraiser      |N/A                  |201                    |Logged In                     |
+| /fundraisers/1  |PUT          |Update a fundraiser          |Fundraiser object    |200                    |Logged In                     |
+| /fundraisers/1  |DELETE       |Delete a fundraiser          |N/A                  |200                    |Logged In/Owner               |
 | /pledges/       |GET          |Get all pledges              |N/A                  |200                    |None                          |
 | /pledges/       |POST         |Create a new pledge          |Pledge object        |201                    |None                          |
+| /pledges/1      |DELETE       |Delete a pledge              |N/A                  |200                    |Logged In/Fundraiser Owner    |
 | /users/         |GET          |Get all users                |N/A                  |200                    |None                          |
 | /users/1        |GET          |Get an user                  |N/A                  |200                    |None                          |
 | /users/         |POST         |Create a new user            |User object          |201                    |Logged In                     |
+|/api-token-auth/ |GET          |Get auth token for a user    |User object          |200                    |None                          |
 
 
 ### DB Schema
 ![]( {{ ./relative/path/to/your/schema/image.png }} )
-```
+
