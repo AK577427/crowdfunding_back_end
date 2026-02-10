@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from rest_framework.generics import get_object_or_404
+from django.contrib.auth.models import AnonymousUser
 
 from .models import Fundraiser,Pledge
 from .permissions import IsOwnerOrReadOnly, IsOwnerOrFundariserOrReadOnly
@@ -80,7 +81,10 @@ class PledgeList(APIView):
     serializer = PledgeSerializer(data=request.data)
     if serializer.is_valid():
       # serializer.save()
-      serializer.save(supporter=request.user)
+      if request.user.is_authenticated:
+        serializer.save(supporter=request.user)
+      else:
+        serializer.save()
       return Response(
         serializer.data, 
         status=status.HTTP_201_CREATED
