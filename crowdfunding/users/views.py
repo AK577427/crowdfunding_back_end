@@ -34,7 +34,7 @@ class CustomUserDetail(APIView):
         #         raise Http404
 
     def get(self, request, pk):
-        user = get_object_or_404(CustomUser,pk)
+        user = get_object_or_404(CustomUser,pk=pk)
         serializer = CustomUserSerializer(user)
         return Response(serializer.data)
 
