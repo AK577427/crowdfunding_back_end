@@ -1,13 +1,5 @@
 ## `README.md` Template Phase 1: API Plan
-
-As your Crowdfunding back end grows, you'll have more and more information to put in the `readme.md` file. For now, you have a rough plan for your project, so let's mark it down!
-
-Below is a template you can use to add your plan to your readme. As usual, {{ double brackets }} indicate places where you should insert your own content. So if your name was Sinead O'Connor, you would swap `Hi, my name is Anu'
-
-If you're looking for a good way to create your Schema diagram in VS Code, check out [the draw.io integration extension for VS Code](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)!
-
-To make editing tables in Markdown easier, you might enjoy [the Markdown All-In-One extension](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one). With this installed, you can hit tab inside of any "cell" in a table, and the editor will automatically resize all your columns and create a new row if necessary.
-
+`Hi, my name is Anu'
 
 # Crowdfunding Back End
 CountOnMe - Support a cause. Make it count.
@@ -19,11 +11,12 @@ CountOnMe is a full-stack crowdfunding platform designed to connect people with 
 This project was built using **Django REST Framework** for the backend API and **React** for the frontend.
 
 ### Intended Audience/User Stories
-{{ Who are your intended audience? How will they use the website? }}
     As a user, I want to create a login
-    As a user, I want to create a fundraiser with log in 
+    As a user, I want to create a fundraiser when logged in 
     As a user, I want to update a fundraiser
     As a user, I want to see the list of all fundraisers + resp pledges
+    
+    As a fundraiser owner, I want to delete a pledge
 
     As a supporter, I want to pledge to a fundraiser without logging in
     As a supporter, I want to see the list of all fundraisers + resp pledges
@@ -62,5 +55,33 @@ This project was built using **Django REST Framework** for the backend API and *
 
 
 ### DB Schema
-![]( {{ ./relative/path/to/your/schema/image.png }} )
+- CustomUser
+    - id (PK)
+    - username
+    - password
+    - email
+- Fundraiser
+    - id (PK)
+    - title
+    - description
+    - goal
+    - image
+    - is_open
+    - date_created
+    - owner_id (FK → CustomUser.id)
+- Pledge
+    - id (PK)
+    - amount
+    - comment
+    - anonymous
+    - fundraiser_id (FK → Fundraiser.id)
+    - supporter_id (FK → CustomUser.id, NULLABLE)
 
+- Relationships:
+    - One CustomUser ➝ many Fundraisers (as owner)
+    - One CustomUser ➝ many Pledges (as supporter)
+
+- Relationship Summary (Cardinality)
+    - CustomUser 1 ────< Fundraiser
+    - CustomUser 1 ────< Pledge
+    - Fundraiser 1 ────< Pledge
