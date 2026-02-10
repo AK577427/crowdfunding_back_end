@@ -16,10 +16,9 @@ This project was built using **Django REST Framework** for the backend API and *
     As a user, I want to update a fundraiser
     As a user, I want to see the list of all fundraisers + resp pledges
     
-    As a fundraiser owner, I want to delete a pledge
+    As a user, Only I shoud be able to delete a pledge on fundraisers I own.
 
     As a supporter, I want to pledge to a fundraiser without logging in
-    As a supporter, I want to see the list of all fundraisers + resp pledges
 
 ### Front End Pages/Functionality
 - Home page
@@ -27,11 +26,12 @@ This project was built using **Django REST Framework** for the backend API and *
     - Click to view Fundraiser details
     - Make a Pledge
     - Login/Register
-- Fundraiser Page
+- Fundraiser Page(Logged in)
     - Fundraiser details
     - All the pledges made for that fundraiser
     - Create a Fundraiser
     - Make a pledge
+    - Delete a pledge
 - Login/Register
     - Register - if a user is new
     - Login - if the user is already registered
@@ -41,8 +41,8 @@ This project was built using **Django REST Framework** for the backend API and *
 | URL             | HTTP Method | Purpose                     | Request Body        | Success Response Code | Authentication/Authorisation |
 | --------------- |------------ | --------------------------- | ------------------- | --------------------- | ---------------------------- |
 | /fundraisers/   |GET          |Get all fundraisers          |N/A                  |200                    |None                          |
-| /fundraisers/1/ |GET          |Get fundraiser with pledges  |Fundraiser object    |200                    |None                          |
-| /fundraisers/   |POST         |Create a new fundraiser      |N/A                  |201                    |Logged In                     |
+| /fundraisers/1/ |GET          |Get fundraiser with pledges  |N/A                  |200                    |None                          |
+| /fundraisers/   |POST         |Create a new fundraiser      |Fundraiser object    |201                    |Logged In                     |
 | /fundraisers/1  |PUT          |Update a fundraiser          |Fundraiser object    |200                    |Logged In                     |
 | /fundraisers/1  |DELETE       |Delete a fundraiser          |N/A                  |200                    |Logged In/Owner               |
 | /pledges/       |GET          |Get all pledges              |N/A                  |200                    |None                          |
