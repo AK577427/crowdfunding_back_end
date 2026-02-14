@@ -110,7 +110,7 @@ Newly created fundraiser returned in 'Get all Fundraisers'
 ![New Fundraiser](./images/GetAllFundraisers2.png)
 - [x]  A screenshot of Insomnia, demonstrating an unsuccessful POST method to create a fundraiser without authentication.
 Failed POST request with NoAuth:
-![FailedNoAuth](./images/FailedNoAuth.png)
+![FailedNoAuth](./images/FailedNoAuth.jpg)
 - [x]  A screenshot of Insomnia, demonstrating a successful DELETE method (Only Fundraiser owner can delete a pledge)
 Unsuccessful Delete:
 ![DifferentAuth](./images/DeletePledgeDifferentOwner.png)
