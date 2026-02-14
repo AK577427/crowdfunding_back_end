@@ -85,3 +85,12 @@ This project was built using **Django REST Framework** for the backend API and *
     - CustomUser 1 ────< Fundraiser
     - CustomUser 1 ────< Pledge
     - Fundraiser 1 ────< Pledge
+
+- [ ] A link to the deployed project.
+https://countonme-c2d7652322c9.herokuapp.com/
+- [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
+![Get all Fundraisers](./images/GetAllFunraisers.png)
+- [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
+- [ ] A screenshot of Insomnia, demonstrating a token being returned.
+- [ ] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
+- [ ] Your refined API specification and Database Schema.
