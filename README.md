@@ -86,21 +86,21 @@ This project was built using **Django REST Framework** for the backend API and *
     - CustomUser 1 ────< Pledge
     - Fundraiser 1 ────< Pledge
 
-- [ ] A link to the deployed project.
+- [x] A link to the deployed project.
 https://countonme-c2d7652322c9.herokuapp.com/
-- [ ] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
+- [x] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
 Get All Fundraisers:
-![Get all Fundraisers](./images/GetAllFunraisers.png)
-- [ ] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
+![Get all Fundraisers](./images/GetAllFunrdaisers.png)
+- [x] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
 Create a pledge:
 ![Create a pledge](./images/CreateAPledge.png)
-- [ ] A screenshot of Insomnia, demonstrating a token being returned.
+- [x] A screenshot of Insomnia, demonstrating a token being returned.
 Create a token for an user:
 ![Create a token for an user](./images/GetAuthToken.png)
-- [ ] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
+- [x] Step by step instructions for how to register a new user and create a new fundraiser (i.e. endpoints and body data).
 Create an User:
 ![Create an User](./images/CreateAnUser.png)
-Newly created user returned in 'Get all Users'
+Newly created user returned in 'Get all Users':
 ![New User](./images/GetAllUsers.png)
 Create a Fundraiser:
 ![Create aFundraiser](./images/CreateAFundraiser.png)
@@ -108,4 +108,20 @@ Fundraiser request with auth token:
 ![Auth Token](./images/RequestWithAuthToken.png)
 Newly created fundraiser returned in 'Get all Fundraisers'
 ![New Fundraiser](./images/GetAllFundraisers2.png)
-- [ ] Your refined API specification and Database Schema.
+- [x]  A screenshot of Insomnia, demonstrating an unsuccessful POST method to create a fundraiser without authentication.
+Failed POST request with NoAuth:
+![FailedNoAuth](./images/FailedNoAuth.png)
+- [x]  A screenshot of Insomnia, demonstrating a successful DELETE method (Only Fundraiser owner can delete a pledge)
+Unsuccessful Delete:
+![DifferentAuth](./images/DeletePledgeDifferentOwner.png)
+Unsuccessful Delete(No Auth):
+![NoAuth](./images/DeletePledgeWithNoAuth.png)
+Successful Delete:
+![CorrectAuth](./images/DeletePledge.png)
+- [x]  A screenshot of Insomnia, demonstrating a pledge can be done without logging in
+Pledge with no Auth:
+![Pledge with no auth](./images/CreatePledgeNoLogin.png)
+No Supporter id:
+![No Supporter Id](./images/GetAllPledges.png)
+
+- [x] Your refined API specification and Database Schema.
