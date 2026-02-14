@@ -90,7 +90,7 @@ This project was built using **Django REST Framework** for the backend API and *
 https://countonme-c2d7652322c9.herokuapp.com/
 - [x] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
 Get All Fundraisers:
-![Get all Fundraisers](./images/GetAllFunrdaisers.png)
+![Get all Fundraisers](./images/GetAllFundraisers.png)
 - [x] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
 Create a pledge:
 ![Create a pledge](./images/CreateAPledge.png)
