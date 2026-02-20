@@ -27,11 +27,6 @@ class CustomUserList(APIView):
         )
     
 class CustomUserDetail(APIView):
-        # def get(self, pk):
-        #     try:
-        #         return CustomUser.objects.get(pk=pk)
-        #     except CustomUser.DoesNotExist:
-        #         raise Http404
 
     def get(self, request, pk):
         user = get_object_or_404(CustomUser,pk=pk)
