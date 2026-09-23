@@ -7,7 +7,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main"]
 
 permissions:
   contents: read
@@ -46,10 +46,13 @@ jobs:
       working-directory: crowdfunding
       run: python manage.py test
 
-    - uses: actions/upload-artifact@main
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
       with:
         name: artifacts
         path: public/
+        if-no-files-found: ignore        
+
   test:
     needs: build
     runs-on: ubuntu-latest
